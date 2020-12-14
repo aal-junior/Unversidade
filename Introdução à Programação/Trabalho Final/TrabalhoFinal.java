@@ -1,10 +1,15 @@
 import java.util.Scanner;
 
-public class PalavrasCruzadasMain {
+public class PalavraCruzadaMain {
 
-    Scanner input = new Scanner(System.in);
+    private static PalavraCruzadaPalavras palavras;
+    private static PalavraCruzadaMapa mapa;
 
     public static void main(String[] args) {
+        
+        PalavraCruzadaMain.palavras = new PalavraCruzadaPalavras();
+        PalavraCruzadaMain.mapa     = new PalavraCruzadaMapa().mapaBusca(PalavraCruzadaMain.palavras.palavrasVetor());
+
         Scanner input = new Scanner(System.in);
         int menu;
         System.out.println("__________ Menu: Palavra Cruzada __________");
@@ -14,47 +19,77 @@ public class PalavrasCruzadasMain {
         System.out.println("4. sair");
         System.out.print(" __ opção: ");
         menu = input.nextInt();
-        if ((menu <=0) || (menu>=5) {
+        if ((menu <= 0) || (menu >= 5)) {
             System.out.println("Opção errada!");
         } else {
-        do {
-        switch(menu) {
-       
-            case 1:
-            // chamar o método palavrasSaidaNaoResolvido da classe PalavraCruzadaPalavras;
-            break;
-            case 2:
-            //chamar o método mapaSaidaNaoResolvido da classe PalavraCruzadaMapa;
-            break;
-            case 3:
-            //chamar o método palavrasSaidaResolvido da classe PalavraCruzadaPalavras;
-            break;
-            case 4: 
-            //sair
-            break;
+
+            do {
+                switch (menu) {
+
+                    case 1:
+                        PalavraCruzadaMain.palavras.palavrasSaidaNaoResolvido();
+                        break;
+                    case 2:
+                        PalavraCruzadaMain.mapa.mapaSaidaNaoResolvido();
+                        break;
+                    case 3:
+                        PalavraCruzadaMain.palavras.palavrasSaidaNaoResolvido();;
+                        break;
+                    case 4:
+                        break;
+                }
+            } while (menu != 4);
+
+            input.close();
+        }
+
+    }
+}
+class PalavraCruzadaPalavras {
+    private final int palavrasQtdLinha = 5;
+
+    private final int palavrasQtdColuna = 2;
+
+    private String[][] palavras;
+
+    PalavraCruzadaPalavras() {
+        this.palavras = new String[5][2];
+        this.palavrasEntrada();
+    }
+
+    String[][] palavrasVetor() {
+        return this.palavras;
+    }
+
+    private void palavrasEntrada() {
+        this.palavras[0][0] = "IFELSE";
+        this.palavras[1][0] = "FORA";
+        this.palavras[2][0] = "WHILE";
+        this.palavras[3][0] = "OBJETO";
+        this.palavras[4][0] = "VETOR";
+    }
+
+    void palavrasSaidaNaoResolvido() {
+
+        for (int i = 0; i < this.palavras.length; ++i) {
+            System.out.println(this.palavras[i][0]);
+        }
+
+    }
+
+    void palavrasSaidaResolvido() {
+
+        for (int i = 0; i < this.palavras.length; ++ i) {
+            final String achou = this.palavras[i][1];
+
+            if (achou == null) {
+                System.out.println("Não achou " + this.palavras[i][0]);
+            } else {
+                System.out.println(String.valueOf(this.palavras[i][1]) + "-" + this.palavras[i][0]);
             }
-        } while (menu !=4);
+        }
+
     }
+
 }
 
-    static private PalavraCruzadasPalavras palavra(String[] args) {
-        palavrasSaidaNaoResolvida();
-        palavrasSaidaResolvida();
-    }
-
-    static private PalavrasCruzadasMapa mapa(String[] args) {
-        mapaSaidaNaoResolvido();
-        mapaBusca();
-    }
-}
-
-public class PalavrasCruzadasPalavra {
-    private final palavrasQtdLinha(short[] palavras) {
-    }
-
-    private final palavrasQtdColuna(short[] palavras) {
-    }
-}
-
-public class PalavrasCruzadasMapa {
-}
