@@ -1,3 +1,5 @@
+//JOSÉ, VAMOS TER DE TRABALHAR NESSE AQUI, POUCO ENTENDI O CÓDIGO KKKK
+
 public class PalavraCruzadaMapa {
     private final short mapaQtdLinha = 12;
     private final short mapaQtdColuna = 7;
