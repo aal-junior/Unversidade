@@ -33,7 +33,7 @@ public class PalavraCruzadaMain {
                         PalavraCruzadaMain.mapa.mapaSaidaNaoResolvido();
                         break;
                     case 3:
-                        PalavraCruzadaMain.palavras.palavrasSaidaNaoResolvido();;
+                        PalavraCruzadaMain.palavras.palavrasSaidaNaoResolvido();
                         break;
                     case 4:
                         break;
