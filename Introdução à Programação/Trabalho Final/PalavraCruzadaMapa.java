@@ -3,7 +3,7 @@ public class PalavraCruzadaMapa {
     private final short mapaQtdColuna = 5;
     private char[][] mapa;
 
-    public PalavraCruzadaMapa() {
+    public void PalavraCruzadaMapa() {
         this.mapa = new char[10][5];
         this.mapaEntrada();
     }
@@ -85,3 +85,9 @@ public class PalavraCruzadaMapa {
         this.mapa[9][4] = 'R';
     }
 }
+
+
+  
+
+    
+    
