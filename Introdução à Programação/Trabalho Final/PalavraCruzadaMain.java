@@ -6,12 +6,15 @@ public class PalavraCruzadaMain {
     private static PalavraCruzadaMapa mapa;
 
     public static void main(String[] args) {
+
+        PalavraCruzadaMain.mapa = new PalavraCruzadaMapa().mapaBusca(PalavraCruzadaMain.palavras.palavrasVetor());
         
         PalavraCruzadaMain.palavras = new PalavraCruzadaPalavras();
-        PalavraCruzadaMain.mapa     = new PalavraCruzadaMapa().mapaBusca(PalavraCruzadaMain.palavras.palavrasVetor());
-
+        
         Scanner input = new Scanner(System.in);
+
         int menu;
+        
         System.out.println("__________ Menu: Palavra Cruzada __________");
         System.out.println("1. listar NÃO resolvido: palavras");
         System.out.println("2. listar NÃO resolvido: mapa");
