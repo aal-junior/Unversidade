@@ -1,8 +1,7 @@
 class PalavraCruzadaPalavras {
-    private final int palavrasQtdLinha = 5;
 
-    private final int palavrasQtdColuna = 2;
-
+    private final short palavrasQtdLinha = 5;
+    private final short palavrasQtdColuna = 10;
     private String[][] palavras;
 
     PalavraCruzadaPalavras() {
@@ -24,7 +23,7 @@ class PalavraCruzadaPalavras {
 
     void palavrasSaidaNaoResolvido() {
 
-        for (int i = 0; i < this.palavras.length; ++i) {
+        for (int i = 0; i < this.palavras.length; i++) {
             System.out.println(this.palavras[i][0]);
         }
 
@@ -32,13 +31,13 @@ class PalavraCruzadaPalavras {
 
     void palavrasSaidaResolvido() {
 
-        for (int i = 0; i < this.palavras.length; ++ i) {
+        for (int i = 0; i < this.palavras.length; i++) {
             final String achou = this.palavras[i][1];
 
             if (achou == null) {
                 System.out.println("Não achou " + this.palavras[i][0]);
             } else {
-                System.out.println(String.valueOf(this.palavras[i][1]) + "-" + this.palavras[i][0]);
+                System.out.println("Achou" + this.palavras[i][0]);
             }
         }
 
